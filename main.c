@@ -4,24 +4,21 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(int argc, char *argv[]) {
-	int a;
+	unsigned int x;
+	int b;
 	
-	printf("input the year : ");
-	scanf("%i", &a);
+	printf("input a number : ");
+	scanf("%ui", &x);
 	
-	if((a%4==0&& a%100!=0)||(a%400==0)) 
+	for(b=0; x!=0; x>>=1) 
 	{
-		printf("%i is leap year.\n",a);
+		if(x&1)
+		{
+			b++;
+		}
 	}
-	else
-	{
-		printf("%i is not leap year.\n",a);
-	}
-	//1. 4로 나누어 떨어져야 함
 	
-	//2. 100으로 나누어 떨어지지 않아야 함
-	
-	//3. 위를 만족 안해도 400으로 나누어 떨어짐 
+	printf("The result is : %i\n",b);
 	
 	return 0;
 }
